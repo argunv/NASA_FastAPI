@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+pydantic
+requests
+pytest
+pytest-cov
+alembic
+python-dotenv
+passlib
+bcrypt
+httpx
+pytest
+pytest-cov
+requests
