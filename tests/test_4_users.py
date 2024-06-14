@@ -1,22 +1,22 @@
 JSON_USER_TEST = {
-    "username": "testuser",
-    "email": "test@example.com",
+    "username": "testuser_one",
+    "email": "test_email@example.com",
     "password": "testpassword"
 }
 
 
 def test_create_user(client):
     response = client.post("/users/", json=JSON_USER_TEST)
+    assert response.status_code == 200
+    assert response.json()["username"] == "testuser_one"
     global user_id
     user_id = response.json()["id"]
-    assert response.status_code == 200
-    assert response.json()["username"] == "testuser"
 
 
 def test_read_user(client):
     response = client.get(f"/users/{user_id}")
     assert response.status_code == 200
-    assert response.json()["username"] == "testuser"
+    assert response.json()["username"] == "testuser_one"
 
 
 def test_update_user(client):
